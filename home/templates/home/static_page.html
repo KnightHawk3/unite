@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% block extra_css %}
+<style type="text/css">
+.content-wrapper {
+    top: 9%;
+}
+</style>
+{% endblock %}
+
+{% block body_class %}{{ page.title }}{% endblock %}
+
+{% block content %}
+    {{ page.body|richtext }}
+{% endblock %}
