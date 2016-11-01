@@ -9,7 +9,7 @@ django-treebeard==4.0.1
 djangorestframework==3.4.7
 html5lib==0.999999
 Pillow==3.4.1
-puput==0.7
+# puput==0.7
 pytz==2016.7
 rcssmin==1.0.6
 rjsmin==1.0.12
