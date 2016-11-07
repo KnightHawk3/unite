@@ -1,0 +1,51 @@
+* Unite
+** What is it?
+This is the website for Unite which will eventually host a membership page, and a couple of blogs probably.
+** Upcoming features
+*** DONE Customisable homepage                                       :melody:
+    CLOSED: [2016-10-21 Fri 12:42]
+*** Hatpins Blog
+**** DONE Easily write blog posts and moderate them                  :melody:
+     CLOSED: [2016-10-22 Sat 11:32]
+**** TODO Matches the theme of the rest of the site          :melody:working:
+*** TODO Membership Application
+**** TODO Action Network integration
+*** TODO Electronic Book Library
+
+** How do I begin work on it?
+Pretty much like this
+
+#+NAME: dev-setup
+#+BEGIN_SRC bash
+# Get the repo and cd into it
+git clone https://github.com/KnightHawk3/unite.git && cd unite
+mkvirtualenv unite # Start your virtualenv, virtualfish or virtualenvwrapper is a good tool
+pip install -r requirements.txt # Get the requirements, wagtail / django / etc
+python puput-unite/setup.py develop # Get the blog, develop is so that when you modify files,
+                                    # they update without you running setup again.
+python manage.py runserver # Should work from here.
+#+END_SRC
+
+** How do I deploy the server?
+A really quick start is this, you should reverse proxy it and probably use gunicorn too, and a real database.
+#+NAME: prod-setup
+#+BEGIN_SRC bash
+# Get the repo and cd into it
+git clone https://github.com/KnightHawk3/unite.git && cd unite
+mkvirtualenv unite # Start your virtualenv, virtualfish or virtualenvwrapper is a good tool
+pip install -r requirements.txt # Get the requirements, wagtail / django / etc
+python puput-unite/setup.py install # Get the blog, develop is so that when you modify files,
+                                    # they update without you running setup again.
+python manage.py runserver # Should work from here.
+#+END_SRC
+
+*** Contributing
+**** TODO Move off master
+Code and documentation is always welcome, development happens currently on master and will in the future use feature
+branches and a develop branch.
+
+On a related note, if you like this, Melody is looking for people local to Brisbane to meet AFK for devops and the
+possibility of starting a computing collective.
+
+** License
+This website is distributed under GPL v3.
