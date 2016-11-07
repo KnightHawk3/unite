@@ -17,26 +17,26 @@ Pretty much like this
 
 #+NAME: dev-setup
 #+BEGIN_SRC bash
-# Get the repo and cd into it
-git clone https://github.com/KnightHawk3/unite.git && cd unite
-mkvirtualenv unite # Start your virtualenv, virtualfish or virtualenvwrapper is a good tool
-pip install -r requirements.txt # Get the requirements, wagtail / django / etc
-python puput-unite/setup.py develop # Get the blog, develop is so that when you modify files,
-                                    # they update without you running setup again.
-python manage.py runserver # Should work from here.
+  # Get the repo and cd into it
+  git clone https://github.com/KnightHawk3/unite.git && cd unite
+  mkvirtualenv unite # Start your virtualenv, virtualfish or virtualenvwrapper is a good tool
+  pip install -r requirements.txt # Get the requirements, wagtail / django / etc
+  python puput-unite/setup.py develop # Get the blog, develop is so that when you modify files,
+                                      # they update without you running setup again.
+  python manage.py runserver # Should work from here.
 #+END_SRC
 
 ** How do I deploy the server?
 A really quick start is this, you should reverse proxy it and probably use gunicorn too, and a real database.
 #+NAME: prod-setup
 #+BEGIN_SRC bash
-# Get the repo and cd into it
-git clone https://github.com/KnightHawk3/unite.git && cd unite
-mkvirtualenv unite # Start your virtualenv, virtualfish or virtualenvwrapper is a good tool
-pip install -r requirements.txt # Get the requirements, wagtail / django / etc
-python puput-unite/setup.py install # Get the blog, develop is so that when you modify files,
-                                    # they update without you running setup again.
-python manage.py runserver # Should work from here.
+  # Get the repo and cd into it
+  git clone https://github.com/KnightHawk3/unite.git && cd unite
+  mkvirtualenv unite # Start your virtualenv, virtualfish or virtualenvwrapper is a good tool
+  pip install -r requirements.txt # Get the requirements, wagtail / django / etc
+  python puput-unite/setup.py install # Get the blog, develop is so that when you modify files,
+                                      # they update without you running setup again.
+  python manage.py runserver # Should work from here.
 #+END_SRC
 
 *** Contributing
