@@ -29,25 +29,29 @@
             <div class="searchTerm">{% trans 'Entries for' %} {{ search_type }} "{{ search_term }}"</div>
         {% endif %}
         {% for entry in entries %}
-            <article class="box page-content blog_grid">
-                {% include 'puput/entry_page_header.html' %}
-                {% if entry.header_image %}
+            <section class="post">
+                <header class="post-header">
+                    {% include 'puput/entry_page_header.html' %}
+                    {% if entry.header_image %}
                     <section>
                         <span class="img-responsive">
                             {% image entry.header_image fill-800x240 as header_image %}
                             <img alt="{{ entry.header_image.title }}" src="{{ header_image.url }}">
                         </span>
                     </section>
-                {% endif %}
-                <section class="article">
-                    {% if entry.excerpt %}
-                        {{ entry.excerpt|richtext }}
-                    {% else %}
-                        {{ entry.body|richtext|truncatewords_html:70 }}
                     {% endif %}
-                    <a class="blog_btn continue" href="{% entry_url entry blog_page %}">{% trans 'Continue reading' %} &raquo;</a>
-                </section>
-            </article>
+                </header>
+                <div class="post-description">
+                    <p>
+                        {% if entry.excerpt %}
+                            {{ entry.excerpt|richtext }}
+                        {% else %}
+                            {{ entry.body|richtext|truncatewords_html:70 }}
+                        {% endif %}
+                        <a class="blog_btn continue" href="{% entry_url entry blog_page %}">{% trans 'Continue reading' %} &raquo;</a>
+                    </p>
+                </div>
+            </section>
         {% empty %}
             <span>{% trans 'No results founds.' %}</span>
         {% endfor %}

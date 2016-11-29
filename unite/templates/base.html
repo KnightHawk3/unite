@@ -5,63 +5,63 @@
 <!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}{% block title_suffix %}{% endblock %}</title>
-	<meta name="description" content="" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}{% block title_suffix %}{% endblock %}</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
-	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-	<!--[if lte IE 8]>
-		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
-	<![endif]-->
-	<!--[if gt IE 8]><!-->
-		<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-	 <!--<![endif]-->
-	 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-	 <!--[if lt IE 9]>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
-	 <![endif]-->
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+        <![endif]-->
+        <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+        <!--<![endif]-->
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <!--[if lt IE 9]>
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+        <![endif]-->
 
-	{# Global stylesheets #}
-	<link rel="stylesheet" type="text/css" href="{% static 'css/unite.css' %}">
+        {# Global stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/unite.css' %}">
 
-	{% block extra_css %}
-	{# Override this in templates to add extra stylesheets #}
-	{% endblock %}
-</head>
+        {% block extra_css %}
+        {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
 
 
-<body class="{% block body_class %}{% endblock %}">
-	{% wagtailuserbar %}
+    <body class="{% block body_class %}{% endblock %}">
+        {% wagtailuserbar %}
 
-    {% block menu %}
+        {% block menu %}
         {% get_site_root as site_root %}
         {% top_menu parent=site_root calling_page=self %}
-    {% endblock %}
+        {% endblock %}
 
-	{% block preamble %}
-	{% endblock %}
-	<div class="content-wrapper">
-		<div class="content">
-			{% block content %}{% endblock %}
-		</div>
-	</div>
+        {% block preamble %}
+        {% endblock %}
+        <div class="content-wrapper">
+            <div class="content">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
 
-	<div class="footer l-box is-center">
-		{% block footer %}
-		View the source of this layout to learn more. Made with love by the YUI Team.
-		{% endblock %}
-	</div>
+        <div class="footer l-box is-center">
+            {% block footer %}
+            View the source of this layout to learn more. Made with love by the YUI Team.
+            {% endblock %}
+	      </div>
 
-	{# Global javascript #}
-	<script type="text/javascript" src="{% static 'js/unite.js' %}"></script>
+	      {# Global javascript #}
+	      <script type="text/javascript" src="{% static 'js/unite.js' %}"></script>
 
-	{% block extra_js %}
-	{# Override this in templates to add extra javascript #}
-	{% endblock %}
-</body>
+	      {% block extra_js %}
+	      {# Override this in templates to add extra javascript #}
+	      {% endblock %}
+    </body>
 </html>
