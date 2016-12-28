@@ -73,9 +73,13 @@ h1, h2, h3, h4, h5, h6, label {
 
 a.pure-button-primary {
     background: white;
-    color: #1f8dd6;
+    color: #d06ce4;
     border-radius: 5px;
     font-size: 120%;
+}
+
+a.join-button {
+    background: #3e3e3e;
 }
 
 
@@ -88,10 +92,9 @@ a.pure-button-primary {
     padding: 0.5em;
     text-align: center;
     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+    background: #313131;
 }
-.home-menu {
-    background: #2d3e50;
-}
+
 .pure-menu.pure-menu-fixed {
     /* Fixed menus normally have a border at the bottom. */
     border-bottom: none;
@@ -110,7 +113,7 @@ a.pure-button-primary {
 }
 
 .home-menu a {
-    color: #6FBEF3;
+    color: #d07ce4;
 }
 .home-menu li a:hover,
 .home-menu li a:focus {
